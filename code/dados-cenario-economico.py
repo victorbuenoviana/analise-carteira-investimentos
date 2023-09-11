@@ -27,17 +27,17 @@ def tratar_dados(df: pd.DataFrame) -> None:
 data_atual = str(datetime.now().strftime("%Y-%m-%d"))
 
 dolar = currency.get(['USD'], start='1994-07-01', end=data_atual, side='both')
-tratar_dados(dolar)
 dolar.reset_index(inplace=True)
+tratar_dados(dolar)
 
 ipca = sgs.get({'ipca': 433}, start = '1994-07-01', end=data_atual)
-tratar_dados(ipca)
 ipca.reset_index(inplace=True)
+tratar_dados(ipca)
 
 igpm = sgs.get({'igp-m': 189}, start = '1994-07-01', end=data_atual)
-tratar_dados(igpm)
 igpm.reset_index(inplace=True)
+tratar_dados(igpm)
 
 selic = sgs.get({'selic':432}, start = '1994-07-01', end=data_atual)
-tratar_dados(selic)
 selic.reset_index(inplace=True)
+tratar_dados(selic)

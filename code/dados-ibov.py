@@ -28,9 +28,6 @@ def tratar_dados(df: pd.DataFrame) -> None:
 
 ibov = web.get_data_yahoo("^BVSP", period="5y")["Adj Close"]
 ibov = pd.DataFrame(ibov)
-tratar_dados(ibov)
 ibov_normalizado = (ibov / ibov.iloc[0])*100
 ibov_normalizado.reset_index(inplace=True)
-ibov_normalizado
-
-
+tratar_dados(ibov_normalizado)
