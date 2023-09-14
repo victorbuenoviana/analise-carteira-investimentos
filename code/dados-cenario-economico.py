@@ -26,7 +26,7 @@ def tratar_dados(df: pd.DataFrame) -> None:
 
 data_atual = str(datetime.now().strftime("%Y-%m-%d"))
 
-dolar = currency.get(['USD'], start='1994-07-01', end=data_atual, side='both')
+dolar = currency.get(['USD'], start='1994-07-01', end=data_atual, side='ask') # bid = venda, ask = compra, both = compra e venda
 dolar.reset_index(inplace=True)
 tratar_dados(dolar)
 
